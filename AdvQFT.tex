@@ -1,0 +1,106 @@
+\documentclass[10pt]{article}
+
+% Preamble
+
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage[mathscr]{euscript}
+%\usepackage[mathcal]{euscript}
+\usepackage{mathrsfs}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{bbm}
+\usepackage{braket}
+\usepackage{tikz-feynman}
+\usepackage{simpler-wick}
+\usepackage{cancel}
+\usepackage{stackengine}
+
+\newcommand{\bigzero}{\mbox{\normalfont\Large\bfseries 0}}
+
+\title{Notes On Advanced Quantum Field Theory \\ The Theory of Elementary Interactions \\ A Course Given By Dr. Tobias Osborne}
+\author{Transcribed by Dr. Alexander V. St. John}
+
+% The Document
+
+\begin{document}
+
+\maketitle
+
+\clearpage
+
+\section*{Lecture 1: Introduction}
+\label{sec: lec1}
+
+\input{chapters/lec1.tex}
+
+\clearpage
+
+\section*{Lecture 2: Gaussian Path Integrals}
+\label{sec: lec2}
+
+\input{chapters/lec2.tex}
+
+\clearpage
+
+\section*{Lecture 3: Correlation Functions and Path Integrals}
+\label{sec: lec3}
+
+\input{chapters/lec3.tex}
+
+\clearpage
+
+\section*{Lecture 4: Functional Quantization of the Scalar Field}
+\label{sec: lec4}
+
+\input{chapters/lec4.tex}
+
+\clearpage
+
+\section*{Lecture 5: Functional Derivatives and Generating Functionals}
+\label{sec: lec5}
+
+\input{chapters/lec5.tex}
+
+\clearpage
+
+\section*{Lecture 6: Grassmann Numbers}
+\label{sec: lec6}
+
+\input{chapters/lec6.tex}
+
+\clearpage
+
+\section*{Lecture 7: Functional Quantization of the Dirac Field}
+\label{sec: lec7}
+
+\noindent We now employ Grassmann numbers/variables to build a path integral-like object that provides the $n$-point correlation functions for the Dirac (spinor) field. \\
+
+\noindent Consider the Grassmann integral of the complex Grassmann variables $\theta$ and $\theta^*$, the Grassmann Gaussian generating function
+
+\begin{equation}
+Z[J] = \left( \prod_{j=1}^n \int d\theta^*_j d\theta_j \right) e^{- \sum_{j,k} \theta_j^* B_{jk} \theta_k + \sum_j (J_j^* \theta_j + \theta^*_j J_j) }
+\end{equation}
+
+\noindent Where the Grassmann variables and auxiliary fields $J$ and $J^*$ obey the anticommutation relations
+
+\begin{align}
+\{ \theta_j, \theta_k^* \} &= \{ \theta_j, \theta_k \} = \{\theta_j^*, \theta_k^* \} = 0 \\
+\{J_j, \theta_k \} &= \{J_j^*, \theta_k \} = \{ J_j, J_k^* \} = 0.
+\end{align}
+
+\noindent Calculating these Gaussian integrals, the generating functional becomes
+
+\begin{equation}
+Z[J] = e^{- \sum_{j,k} J_j^* [B^{-1}]_{jk} J_k}.
+\end{equation}
+
+\noindent Since the matrix $B$ is unitary, such that $B^\dagger = B$, the generating functional $Z[J]$ is Hermitian. \\
+
+\noindent Note that the generating functional takes a vector of Grassmann numbers, anticommuting objects, as input and yields an expression quadratic in the Grassmann numbers which evaluates to a real number, a commuting object, since observables correspond to Hermitian operators and real numbers as their eigenvalues; the expectation value must always be a real number, not a Grassmann number.
+
+%\input{chapters/lec7.tex}
+
+%\clearpage
+
+\end{document}
+

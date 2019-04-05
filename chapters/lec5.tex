@@ -1,0 +1,208 @@
+
+\noindent Here we will finish the functional quantization of the scalar field. \\
+
+\noindent Recall that we can compute time-ordered correlation functions for the quantum scalar field entirely in terms of classical quantities, which is equivalent to a sum over all diagrams,
+
+\begin{equation}
+\bra{\Omega} T[ \hat{\phi} (x_1) \dots \hat{\phi} (x_n) ] \ket{\Omega} = \lim_{T \rightarrow \infty(1-i\epsilon)} \frac{\int \mathcal{D} \phi \,\, \phi(x_1) \dots \phi(x_n) e^{i S[\phi(x_1), \dots , \phi (x_n)]}}{\int \mathcal{D} \phi \,\, e^{i S[\phi(x_1), \dots , \phi (x_n)]}}
+\end{equation}
+
+\noindent For example, the 2-point correlation function for the Klein-Gordon field is the Feynman propagator
+
+\begin{equation}
+\bra{\Omega} T[ \hat{\phi} (x_1) \hat{\phi} (x_2) ] \ket{\Omega} = \lim_{T \rightarrow \infty(1-i\epsilon)} \frac{\int \mathcal{D} \phi \,\, \phi(x_1) \phi(x_2) e^{i S}}{\int \mathcal{D} \phi \,\, e^{i S}} = D_F (x_1 - x_2)
+\end{equation}
+
+\noindent More elegantly, and analogous to multivariate Gaussian integrals, we found the Feynman propagator $D_F (x-y)$, which is the inverse operator of the Klein-Gordon operator $-\partial^2 - m^2$, to be similiar to the inverse of a matrix $\textbf{A}$, making the Klein-Gordon operator the matrix $\textbf{A}$. 
+
+\begin{equation}
+D_F (x_j - x_k) \sim [\textbf{A}^{-1}]_{jk} = \frac{\int dx_1 \dots dx_n \,\, x_j x_k e^{-\frac{1}{2} x^T \textbf{A} x} }{\int dx_1 \dots dx_n \,\, e^{-\frac{1}{2} x^T \textbf{A} x}}
+\end{equation}
+
+\noindent To compute these $n$-point correlation functions, or elements of this "inverse matrix", we used derivatives of the generating functional, which is what we generalize in this lecture. Recall the multivariate Gaussian generating functional
+
+\begin{equation}
+Z[J] = \int dx_1 \dots dx_n e^{ -\frac{1}{2} x^T \textbf{A} x - J^T x } = e^{ \frac{1}{2} J^T \textbf{A}^{-1} J }.
+\end{equation}
+
+\subsection*{Functional Derivatives}
+
+\noindent The functional derivative is a tool from the calculus of variations that we now define by an example that is the continuum analog of the standard partial derivative
+
+\begin{equation}
+\frac{\delta}{\delta J(x)} J(y) = \delta^{(4)} (x-y).
+\end{equation}
+
+\noindent There is a \textit{one-to-one} mapping from the discrete representation to the continuous with correspondences
+
+\begin{equation}
+\begin{array}{ccc}
+x \in \mathbb{R} & \rightarrow & j \in \mathbb{Z} \\
+J(x) \in C(\mathbb{R}) & \rightarrow & J_j \in L_2(\mathbb{Z}) \\
+\frac{\delta}{\delta J(x)} F[J(y)] & \rightarrow & \frac{\partial}{\partial J_j} F[J_1, J_2, \dots]
+\end{array}
+\end{equation}
+
+\noindent Where $C(\mathbb{R})$ is a continuous function space and $L_2(\mathbb{Z})$ is ...
+
+\subsubsection*{Example 1}
+
+\begin{align*}
+\frac{\delta}{\delta J(x)} e^{i \int d^4 y \, J(y) \phi (y)} &= i e^{i \int d^4 y \, J(y) \phi (y)} \frac{\delta}{\delta J(x)} \left( \int d^4 y \, J(y) \phi (y) \right) \\
+&= i e^{i \int d^4 y \, J(y) \phi (y)} \int d^4 y \, \frac{\delta J(y)}{\delta J(x)} \phi(y) \\
+&= i e^{i \int d^4 y \, J(y) \phi (y)} \int d^4 y \, \delta^{(4)} (x-y) \phi(y) \\
+\frac{\delta}{\delta J(x)} e^{i \int d^4 y \, J(y) \phi (y)} &= i \phi (x) e^{i \int d^4 y \, J(y) \phi (y)}
+\end{align*}
+
+\subsubsection*{Example 2: Derivatives of Delta functions}
+
+\begin{align*}
+\frac{\delta}{\delta J(x)} \int d^4 y \, (\partial_\mu J(y) ) v^\mu (y) &= \frac{\delta}{\delta J(x)} \left( \text{boundary term}  - \int d^4 y \, J(y) \partial_\mu v^\mu (y) \right) \\
+&= -\partial_\mu v^\mu (x)
+\end{align*}
+
+\noindent Note that the boundary term is almost always zero, except for topologically interesting theories.
+
+\subsection*{The Generating Functional}
+
+\noindent Define the generating functional as
+
+\begin{equation}
+Z[J] = \lim_{T \rightarrow \infty(1-i \epsilon)} \int \mathcal{D} \phi \,\, e^{i S + i J(x) \phi(x)}.
+\end{equation}
+
+\noindent This expression is obviously useful, since correlation functions are directly related to derivatives of $Z[J]$
+
+\begin{equation}
+\bra{\Omega} T [ \hat{\phi} (x) \hat{\phi} (y) ] \ket{\Omega} = \frac{- \frac{\delta}{\delta J(x)}  \frac{\delta}{\delta J(y)} Z[J] \big{|}_{J=0}}{Z[J] \big{|}_{J=0}}
+\end{equation}
+
+\noindent So, if you can compute the generating functional $Z[J]$, you have \textit{all} of the $n$-point correlation functiosn via derivatives for your field theory. \\
+
+\noindent In free field theories, such as the Klein-Gordon field, the action is quadratic in the field operators, and the argument of the exponential is $Z[J]$ is
+
+\begin{equation}
+i(S_0 + J(x) \phi (x) = i \int d^4 x \,\, \left( \frac{1}{2} \phi (x) (-\partial^2 - m^2 + i \epsilon) \phi (x) + J(x) \phi(x) \right).
+\end{equation}
+
+\noindent To homogenize quadraticity, complete the square by introducing the shift (with Jacobian $=1$
+
+\begin{equation}
+\phi' (x) = \phi (x) - i \int d^4 y \,\, D_F (x-y) J (y).
+\end{equation}
+
+\noindent This is analogous to the positional shift $x' = x - \textbf{A}^{-1} J$, and works becuase the Feynman propagator is the inverse of the Klein-Gordon operator, such that 
+
+\begin{equation}
+(-\partial^2 - m^2 ) D_F (x-y) = i \delta^{(4)} (x-y)
+\end{equation}
+
+\noindent With the variable change, the exponential argument becomes
+
+\begin{align*}
+i(S_0 + J(x) \phi (x) = & i \int d^4 x \,\, \left( \frac{1}{2} \phi' (x) (-\partial^2 -m^2 + i \epsilon) \phi' (x) \right) \\
+&- i \int d^4 x \int d^4 y \, \left( \frac{1}{2} J(x) (-i D_F (x-y)) J(y) \right).
+\end{align*}
+
+\noindent So, the generating functional is then
+
+\begin{equation}
+Z[J] = Z_0 e^{-\frac{1}{2} \int d^4 x d^4 y \, ( J(x) D_F (x-y) J (y))}
+\end{equation}
+
+\noindent Where the free field contribution, independent of $J$, is
+
+\begin{equation}
+Z_0 = \int \mathcal{D} \phi' \,\, e^{ i \int d^4 x \,\, \left( \frac{1}{2} \phi' (x) (-\partial^2 -m^2 + i \epsilon) \phi' (x) \right)}.
+\end{equation}
+
+\subsubsection*{Examples of Free Theory Correlations Functions}
+
+\noindent \textbf{Example 1:} The 2-point correlation function, with the $Z_0$ cancelled out,
+
+\begin{equation}
+\bra{\Omega} T [ \hat{\phi} (x) \hat{\phi} (y) ] \ket{\Omega} = - \frac{\delta}{\delta J(x)}  \frac{\delta}{\delta J(y)} e^{-\frac{1}{2} \int d^4 x d^4 y \, ( J(x) D_F (x-y) J (y))} \big{|}_{J=0}.
+\end{equation}
+
+\noindent \textbf{Example:} The 4-point correlation function, with notation $\hat{\phi}_i = \hat{\phi} (x_i)$, $J_i = J (x_i)$, and $D_{xi} = D(x - x_i)$
+
+\begin{align}
+\bra{0} T[ \hat{\phi_1} \hat{\phi}_2 \hat{\phi}_3 \hat{\phi}_4 ] \ket{0} &= \frac{ \frac{\delta}{\delta J_1} \frac{\delta}{\delta J_2} \frac{\delta}{\delta J_3} \frac{\delta}{\delta J_4}  Z[J] \big{|}_{J=0} }{ Z[J=0] } \\
+&= \frac{\delta}{\delta J_1} \frac{\delta}{\delta J_2} \frac{\delta}{\delta J_3} \left( - \int d^4 x' \,\, J_{x'} D_{x' 4} e^{-\frac{1}{2} \int d^4 x \int d^4 y J_x D_{xy} J_y} \right) \big{|}_{J=0}  \\
+&= \frac{\delta}{\delta J_1} \frac{\delta}{\delta J_2} \left( -D_{34} + \int d^4 x' \int d^4 y' \, J_{x'} D_{x' 3} J_{y'} D_{y' 4} \right) \times e^{\dots} \big{|}_{J=0}   \\
+&= \frac{\delta}{\delta J_1} \left( D_{34} \int d^4 x' \, J_{x'} D_{x' 2} + D_{24} \int d^4 y' \, J_{y'} D_{y' 3} + D_{23} \int d^4 z' \, J_{z'} D_{z' 4} + \mathcal{O} (J^2) \right) e^{\dots} \big{|}_{J=0}  \\
+&= D_{34} D_{12} + D_{24} D_{13} + D_{23} D_{14}
+\end{align}
+
+\subsubsection*{Interacting Fields}
+
+\noindent The time-ordered expectation value, which contains the generating functions by Taylor expansion, for the (classical) phi-fourth interacting theory is 
+
+\begin{equation}
+\bra{\Omega} T[ \phi_1 \dots \phi_n] \ket{\Omega} = \lim_{T \rightarrow \infty (1-i \epsilon )} \frac{ \int \mathcal{D} \, \phi e^{i(S_0 + S_{int})} \phi (x_1) \dots \phi (x_n) }{\int \mathcal{D} \phi \, e^{i(S_0 + S_{int})}}
+\end{equation}
+
+\noindent Where $S_{int} = -\frac{i \lambda}{4!} \int d^4 x \, \phi^4 (x)$. \\
+
+\subsubsection*{Fermionic Fields}
+
+\noindent For the (classical) \textit{fermionic field} $\hat{\psi}$, the 2-point correlation function, vacuum expectation value, is
+
+\begin{equation}
+\bra{\Omega} T[ \psi (x) \psi (y)] \ket{\Omega} = \frac{ \int \mathcal{D} \, \psi e^{iS} \psi (x) \psi (y) }{\int \mathcal{D} \psi \, e^{iS}}
+\end{equation}
+
+\noindent Rule number one for this expression (1) is to not think abou this operationally, and rule number two (2) is to think in analogy to complex numbers, which can provide a more clear representation and make things easier.  \\
+
+\noindent The Fermi fields obey the relations
+
+\begin{align}
+\psi^2 (x) &= 0 \\
+\psi (x) \psi (y) &= - \psi (y) \psi (x)
+\end{align}
+
+\subsection*{Vignette: Anticommuting Numbers (Grassman Numbers)}
+
+\noindent Let $V$ be an $n$-dimensional vector space with basis $\theta_a \in V$, $a=1,\dots,n$. Thus, elements of the vector space $v \in V$ have the form 
+
+\begin{equation}
+v = \sum_{a=1}^n v_a \theta_a.
+\end{equation}
+
+\noindent To build a bigger vector space $\mathcal{G}(V)$ from $V$, we first endow $V$ with the product operation denoted by concatenation (e.g., $\theta_a \cdot \theta_b \cdot \theta_c = \theta_a \theta_b \theta_c$). \\
+
+\noindent This gives us an infinite dimensional vector space with span
+
+\begin{equation}
+\mathcal{S}^{\infty} (V) = \text{span} \{ \theta_a, \theta_a \theta_b, \theta_a \theta_b \theta_c, \dots \}
+\end{equation}
+
+\noindent Now restrict the basis to obey the following suggestive relations
+
+\begin{align}
+\theta_a \theta_b &= - \theta_b \theta_a \\
+\theta_a^2 &= 0.
+\end{align}
+
+\noindent Then the new vector space has dimension $\text{dim}(\mathcal{G} (V)) = 2^n$, and is the infinite dimensional span modulo the elements of the underlying vector space
+
+\begin{equation}
+\mathcal{G}(V) = \mathcal{S}^{\infty} (V) / v.
+\end{equation}
+
+\noindent (\textbf{Exercise}) Check that this structure is well-defined. Note that this is exactly the space of differential forms for a tangent space $V$ (also known as the space of "classical fermions"). \\
+
+\noindent The basis of $\mathcal{G} (V)$ is now 
+
+\begin{equation}
+\{ 1, \, \theta_a, \, \theta_a \theta_b, \, \theta_a \theta_b \theta_c, \dots \}
+\end{equation}
+
+\noindent With $a=1,\dots,n$, followed by $1 \le a < b \le n$, $a < b < c$, etc. \\
+
+\noindent Then a general element of the new vector space $f \in \mathcal{G} (V)$ is
+
+\begin{align}
+f = \alpha + \sum_{p=1}^n \,\, \sum_{1 \le j_1 < \dots < j_p \le n} \alpha_{j_1 j_2 \dots j_p} \, &\theta_{j_1} \theta_{j_2} \dots \theta_{j_p} \\
+&, \text{where} \,\, \alpha_{j_1 j_2 \dots j_p} \in \mathbb{C}.
+\end{align}

@@ -1,0 +1,208 @@
+\noindent The path integral formalism for quantization of fields is an incredibly efficient tool, but one must learn when, and when not, ot use it. Through the lectures and many examples, we'll develop an intuition for when to trust quantization via path integrals. \\
+
+\noindent Recall the action of the scalar field $S$ with classical field operators $\phi$
+
+\begin{equation}
+S_0 = \int d^4 x \,\, \mathcal{L}_0 = \int d^4 x \,\, \left( \frac{1}{2} (\partial_\mu \phi)^2 - \frac{1}{2} m^2 \phi^2 \right).
+\end{equation}
+
+\noindent We will (1) discretize, tantamount to imposing a cutoff $\Lambda$, (2) evaluate the integrals, and (3) enter the continuum limit where $\epsilon \rightarrow 0$. Start the discretization by putting the field on a lattice (a Lorentz manifold) with spacing $\epsilon$ and then compactify the space onto a torus for periodic boundary conditions.  \\
+
+\noindent Mathematically, we are transforming from a four-dimensional Minkowski space $\mathcal{M}^4$ to a four-domensional torus $(\mathbb{Z}/N\mathbb{Z})^4$, where $N = \frac{L}{\epsilon}$ is the number of sites, and $L$ is the total size of grid.
+
+%\begin{figure}[H]
+%	\centering
+%	\includegraphics[scale=0.5]{images/compactify.png}}
+%\end{figure}
+
+\noindent Continue discretization with the field operators
+
+\begin{align}
+\phi(x) \rightarrow &\phi(x_j) \equiv q_j, \\
+&x_j=\epsilon j \in \frac{L}{N} (\mathbb{Z}/N\mathbb{Z})^4.
+\end{align}
+
+\noindent And the partial derivatives are replaced for the forward difference, which is not the best method, but it's "good enough for government work"
+
+\begin{equation}
+\partial_\mu \phi (x) \rightarrow \frac{\phi(x_j + \epsilon e^\mu) - \phi(x_j)}{\epsilon}.
+\end{equation}
+
+\noindent And the space-time integral becomes a sum over the sites on the torus
+
+\begin{equation}
+\int d^4 x \, \rightarrow \epsilon^4 \sum_{j \in (\mathbb{Z}/N\mathbb{Z})^4}
+\end{equation}
+
+\noindent Now following the path integral quanitzation recipe, consider the transition amplitude in terms of the discretized action
+
+\begin{equation}
+\bra{\phi_f} U(q_i, q_f; T) \ket{\phi_i} = \int \mathcal{D} \phi \,\, e^{i S_0}
+\end{equation}
+
+\noindent Where we follwo the "algorithm" of the integral-differential operator and discretize it to a product, over the torus sites, of integrals ($N^4$ total integrals) over the field operators, the canonical position variables 
+
+\begin{equation}
+\int \mathcal{D} \phi \rightarrow \prod_j \int d \phi (x_j) \equiv \prod_j \int d q_j.
+\end{equation}
+
+\subsection*{Discretization in Momentum Space}
+
+\noindent Thus far we have worked entirely in real (position) space. Let's Fourier transform over into momentum space to continue discretization. The Fourier transform is a unitary transformation with Jacobian equal to 1 (\textbf{Exercise}). First, the field operators transform as
+
+\begin{equation}
+\phi (x_j) = \frac{1}{V} \sum_n e^{-i k_n \cdot x_j} \phi (k_n)
+\end{equation}
+
+\noindent Where $V=L^4$ is the volume of the 4D torus. Notationally, the $k$ argument to the field operator in momentum space $\phi (k)$ will denote the Fourier transform of the field operator in real space $\phi (x)$. The wavenumber $k_n$ is discretized over the torus as
+
+\begin{equation}
+k_n = \frac{2 \pi n^\mu}{L}, \,\, n^\mu \in \mathbb{Z}/N\mathbb{Z} \,\, \text{and} \,\, |k^\mu| < \frac{\pi}{\epsilon}
+\end{equation}
+
+\noindent Note that the Fourier space field operator is complex, such that $\phi(-k) = \phi^* (k)$, and we therefore have two independent variables per field operator in momentum space: the real part $\Re \phi (k_n)$ and the imaginary part $\Im \phi (k_n)$ for positive time-component $k_n^0 > 0$.
+
+\noindent So, in momentum space, the discretized integral-differential operator is (\textbf{Exercise})
+
+\begin{equation}
+\int \mathcal{D} \phi = \prod_{n: k_n^0 > 0} \int d \, \Re \phi (k_n) \int d \, \Im \phi (k_n).
+\end{equation}
+
+\noindent And the discretized action for the scalar field in momentum space is (\textbf{Exercise})
+
+\begin{equation}
+S_0 = - \frac{1}{V} \sum_{k_n^0 > 0} (m^2 - k_n^2) ( (\Re \phi_n)^2 + (\Im \phi_n)^2)
+\end{equation}
+
+\noindent Where $\phi_n \equiv \phi(k_n)$, and the following relation for the Kronecker delta is used to obtain this expression
+
+\begin{equation}
+\delta_{k,0} = \frac{1}{n} \sum_{j=0}^{n-1} e^{\frac{2\pi i j k}{n}}.
+\end{equation}
+
+\noindent Our expression for the path integral for the Klein-Gordon field discretized to a lattice (four-dimensional with periodic boundary conditions) is comprised of Gaussian integarls over a finite number of degrees of freedom
+
+\begin{equation}
+I_0 = \int \mathcal{D} \phi \, e^{i S_0} = \left( \prod_{k_n^0 > 0} \int d \, \Re \phi_n \int d \, \Im \phi_n \right) e^{-i \frac{1}{V} \sum_{k_n^0 > 0} (m^2 - k_n^2 ) | \phi_n |^2}.
+\end{equation}
+
+\noindent Now, onto evaluating this integral, it's just a bunch of Gaussian integrals, and we know how to solve those. We get the following, and unrestrict $k_n$ to get the second line (\textbf{Exercise}) 
+
+\begin{align}
+I_0 &= \prod_{k_n^0 > 0} \sqrt{\frac{-i \pi V}{m^2 - k_n^2}} \cdot \sqrt{\frac{-i \pi V}{m^2 - k_n^2}} \\
+I_0 &=  \prod_{k_n} \sqrt{\frac{-i \pi V}{m^2 - k_n^2}}
+\end{align}
+
+\noindent Note that $k_n$ is bounded, but we have an infinity when $V \rightarrow \infty$ (continuum limit), but this integral does not yet have full operational meaning and is proportional to the transition amplitude $I_0 \propto \bra{\phi_f} U(q_i, q_f; T) \ket{\phi_i}$, and the infinities will cancel and drop out in the full expression. \\
+
+\subsection*{Heuristic Argument for $I_0$}
+
+\noindent As the "surface area of knowledge" we need to remember the path integral formalism is small, there is a heuristic way to obtain this result without formal discretization, etc., using the aforementioned intuition. \\
+
+\noindent Recall the Gaussian integral whose argument is quadratic in its independent variable
+
+\begin{equation}
+\int dx \,\, e^{-x^T \textbf{A} x} = \sqrt{\frac{\pi^n}{\text{det}(\textbf{A})}} \propto (\text{det}(\textbf{A}))^{-\frac{1}{2}}
+\end{equation}
+
+\noindent For the Klein-Gordon field, consider the path integral with the Klein-Gordon operator and field operators substituted
+
+\begin{equation}
+\int \mathcal{D} \phi \,\, e^{i S} \,\, \sim  \,\, \int \mathcal{D} \phi \,\, e^{\frac{1}{2} \int d^4 x \,\, \phi(x) (-\partial^2 - m^2) \phi (x)}
+\end{equation}
+
+\noindent So, we are boldly extrapolating to say that $\textbf{A}$ is like the Klein-Gordon operator and the $x$ is like the field operator
+
+\begin{equation}
+\int d^4 x \,\, \phi (x) (-\partial^2 - m^2) \phi (x) \sim x^T \textbf{A} x.
+\end{equation}
+
+\noindent Furthermore, we say that the path integral is proportional to the determinant of the Klein-Gordon operator
+
+\begin{equation}
+\int \mathcal{D} \phi \,\, e^{i S} \,\, \propto \,\, (\text{det}(-\partial^2 - m^2))^{-\frac{1}{2}}.
+\end{equation}
+
+\subsection*{Operationally Well-Defined Quantities}
+
+\noindent As mentioned, $I_0$ cancels for operationally well-defined quanities, such as the 2-point correlation function, a time-ordered expectation value of products of the field operators. For example, using the path integral formalism
+
+\begin{equation}
+\bra{\Omega} \mathcal{T} [ \phi (x_1) \phi (x_2) ] \ket{\Omega} = \lim_{T \rightarrow \infty (1 - i \epsilon)} \frac{\int \mathcal{D} \phi \,\, \phi(x_1) \phi(x_2) e^{i S}}{\int \mathcal{D} \phi \,\, e^{i S}}
+\end{equation}
+
+\noindent To check our bold extrapolations, calculate the discretized field operator product
+
+\begin{equation}
+\phi (x_1) \phi (x_2) = \frac{1}{V^2} \sum_m e^{-i k_m \cdot x_1} \phi_m \sum_l e^{-i k_l \cdot x_2} \phi_l
+\end{equation}
+
+\noindent So, the discretized RHS numerator of the time-ordered expectation value above is just a bunch of  independent Gaussian integrals, quadratic in its independent variables (\textbf{Exercise})
+
+\begin{align*}
+\text{numerator} &= \frac{1}{V^2} \sum_{l,m} e^{-i (k_m \cdot x_1 + k_l \cdot x_2)} \left( \prod_{k_n^0 > 0} \int d \, \Re \phi_n \int d \, \Im \phi_n  \right) \\
+&\,\,\,\,\,\, \times (\Re \phi_m + i \Im \phi_m ) (\Re \phi_l + i \Im \phi_l) e^{-i\frac{1}{V} \sum_{k_n^0 > 0} (m^2 - k_n^2 ) ((\Re \phi_n)^2 + (\Im \phi_n)^2)} \\
+&= \frac{1}{V^2} \sum_m e^{-i k_m \cdot (x_1 - x_2)} \left( \prod_{k_n^0 > 0} \frac{-i \pi V}{m^2 - k_n^2} \right) \frac{-i V}{m^2 - k_n^2 - i \epsilon} \\
+&= \frac{1}{V^2} \sum_m e^{-i k_m \cdot (x_1 - x_2)} \cdot I_0 \cdot \frac{-i V}{m^2 - k_n^2 - i \epsilon} 
+\end{align*}
+
+\noindent Where we drastically cut down the number of integrals to evaluate, since any integrals involving products like $\Re \phi_m \cdot \Im \phi_l$ or $\Im \phi_m \cdot \Re \phi_l$ form odd integrands and evaluate to zero. The integeral will also be zero for terms where $m \ne l$ and for terms where $k_m = k_l$. Integrals where $k_m = -k_l$ will \textit{not} be zero. \\
+
+\noindent Bringing this together, the RHS of the time-ordered expectation value has boiled down to 
+
+\begin{align}
+\bra{\Omega} \mathcal{T} [ \phi (x_1) \phi (x_2) ] \ket{\Omega} &= \lim_{T \rightarrow \infty (1 - i \epsilon)} \frac{\int \mathcal{D} \phi \,\, \phi(x_1) \phi(x_2) e^{i S}}{\int \mathcal{D} \phi \,\, e^{i S}} \\
+&= \lim_{V \rightarrow \infty} -i \frac{1}{V} \sum_n \frac{e^{-i k_n \cdot (x_1 - x_2) }}{m^2 - k_n^2 - i \epsilon} \\
+&= \int \frac{d^4 k}{(2\pi)^4} \, \, \frac{i e^{-i k \cdot (x_1 - x_2)}}{-m^2 + k^2 + i \epsilon} \\
+\bra{\Omega} \mathcal{T} [ \phi (x_1) \phi (x_2) ] \ket{\Omega} &= D(x_1 - x_2)
+\end{align}
+
+\noindent So, the path integral formalism gives us exactly the propagator we wish to see. Note that is we were to just boldy extrapolate, without discretization, etc., we would get the same result! \\
+
+\noindent For example,
+
+\begin{equation}
+\frac{\int \mathcal{D} \phi \,\, \phi(x_1) \phi(x_2) e^{i S}}{\int \mathcal{D} \phi \,\, e^{i S}} = \frac{(\partial^2 - m^2)^{-\frac{1}{2}} D(x_1 - x_2)}{(\partial^2 - m^2)^{-\frac{1}{2}}}
+\end{equation}
+
+\noindent Since if $\textbf{A} \sim (-\partial^2 - m^2)$ \\
+Then $[ \textbf{A}^{-1}]_{jk} \sim \frac{1}{(-\partial^2 - m^2)_{x_1 x_2}} = D(x_1 - x_2)$ \\
+And  $\delta^{(4)} (x-y) = (-\partial^2 - m^2) D(x-y)$. \\
+
+\subsection*{Example: 4-point Correlation Function}
+
+\noindent Note that all 3-point correlations are zero, since they all have odd integrands. The 4-point correlation function starts off as
+
+\begin{equation}
+\bra{\Omega} \mathcal{T} [ \phi (x_1) \phi (x_2) \phi (x_3) \phi (x_4) ] \ket{\Omega} = \lim_{T \rightarrow \infty (1 - i \epsilon)} \frac{\int \mathcal{D} \phi \,\, \phi(x_1) \phi(x_2) \phi(x_3) \phi(x_4) e^{i S}}{\int \mathcal{D} \phi \,\, e^{i S}}.
+\end{equation}
+
+\noindent The numerator contains the quantities of $(\Re \phi_m + i \Im \phi_m) \dots (\Re \phi_l + i \Im \phi_l)$, and most terms will vanish as before, leaving us with terms where $k_l = -k_m$ and $k_q = -k_p$, and we end up with, after applying Wick's theorem and sending $V \rightarrow \infty$ (\textbf{Exercise}), something like
+
+\begin{align*}
+&\sum_{k_l, k_q} e^{-i \dots} \int \dots \phi_{k_l} \phi_{-k_l} \phi_{k_q} \phi_{-k_q} e^{\dots} \\
+&= D_F(x_1 - x_2) D_F (x_3 - x_4) + D_F (x_1 - x_3) D_F (x_2 - x_4) + D_F (x_1 - x_4) D_F (x_2 - x_3)
+\end{align*}
+
+\subsection*{Interacting QFT via Path Integrals}
+
+\noindent Consider the action with a free part and an interacting part, namely the phi-fourth interaction,
+
+\begin{equation}
+S = S_0 + S_{int} = S_0 + \frac{i \lambda}{4!} \int d^4 x \,\, \phi^4 (x).
+\end{equation}
+
+\noindent Then the time-ordered expectation value for 2-point correlations can be Taylor expanded, since $\lambda$ is small,
+
+\begin{align}
+\bra{\Omega} \mathcal{T} [ \phi (x_1) \phi (x_2) ] \ket{\Omega} &= lim_{T \rightarrow \infty (1 - i \epsilon)} \frac{\int \mathcal{D} \phi \,\, \phi(x_1) \phi(x_2) e^{i (S_0 + S_{int})} }{\int \mathcal{D} \phi \,\, e^{i (S_0 + S_{int})}} \\
+&= lim_{T \rightarrow \infty (1 - i \epsilon)} \frac{\int \mathcal{D} \phi \,\, \phi(x_1) \phi(x_2) e^{i S_0} (1 + S_{int} + \frac{1}{2} S_{int}^2 + \dots)}{\int \mathcal{D} \phi \,\, e^{i S_0} (1 + S_{int} + \frac{1}{2} S_{int}^2 + \dots)}
+\end{align}
+
+\noindent Where $S_{int} = \frac{i \lambda}{4!} \int d^4 z \,\, \phi^4 (z)$, and each term above is an integral of powers of time-ordered quantum field operators which end up as Feynman diagrams, for example, of the form
+
+\begin{align}
+&\frac{\lambda^m}{4!^m} \int d^4 z_1 \dots \int d^4 z_m \int \mathcal{D} \phi \,\, \phi(x_1) \phi(x_2) \phi^4(z_1) \dots \phi^4(z_m) e^{i S_0} \\
+&= \frac{\lambda^m}{4!^m} \int d^4 z_1 \dots \int d^4 z_m \bra{\Omega} \mathcal{T} [\hat{\phi}(x_1) \hat{\phi}(x_2) \hat{\phi}^4 (z_1) \dots \hat{\phi}^4 (z_m) ] \ket{\Omega} \\
+&= \text{Sum of Feynman diagrams}
+\end{align}
