@@ -1,0 +1,200 @@
+
+\noindent We now employ Grassmann numbers/variables to build a path integral-like object that provides the $n$-point correlation functions for the Dirac (spinor) field. \\
+
+\noindent Consider the Grassmann integral of the complex Grassmann variables $\theta$ and $\theta^*$, the Grassmann Gaussian generating function
+
+\begin{equation}
+Z[J] = \left( \prod_{j=1}^n \int d\theta^*_j d\theta_j \right) e^{- \sum_{j,k} \theta_j^* B_{jk} \theta_k + \sum_j (J_j^* \theta_j + \theta^*_j J_j) }
+\end{equation}
+
+\noindent Where the Grassmann variables and auxiliary fields $J$ and $J^*$ obey the anticommutation relations
+
+\begin{align}
+\{ \theta_j, \theta_k^* \} &= \{ \theta_j, \theta_k \} = \{\theta_j^*, \theta_k^* \} = 0 \\
+\{J_j, \theta_k \} &= \{J_j^*, \theta_k \} = \{ J_j, J_k^* \} = 0.
+\end{align}
+
+\noindent Calculating these Gaussian integrals, the generating functional becomes
+
+\begin{equation}
+Z[J] = e^{- \sum_{j,k} J_j^* [B^{-1}]_{jk} J_k}.
+\end{equation}
+
+\noindent Since the matrix $B$ is unitary, such that $B^\dagger = B$, the generating functional $Z[J]$ is Hermitian. \\
+
+\noindent Note that the generating functional takes a vector of Grassmann numbers, anticommuting objects, as input and yields an expression quadratic in the Grassmann numbers which evaluates to a real number, a commuting object, since observables correspond to Hermitian operators and real numbers as their eigenvalues; the expectation value must always be a real number, not a Grassmann number. \\
+
+\noindent Recall the Dirac spinor field which is what we mean to be classical fermions. The classical fermion is represented by the 4-component spacetime vector
+
+\begin{equation}
+\psi (x) \rightarrow M(\Lambda) \psi (\Lambda^{-1} x)
+\end{equation}
+
+\noindent With the representation of the Lorentz group
+
+\begin{equation}
+M = e^{-\frac{i}{2} \omega_{\mu\nu} S^{\mu \nu}}.
+\end{equation}
+
+\noindent Where $S^{\mu\nu} = \frac{i}{4} [\gamma^\mu, \gamma^\nu]$ and $\{ \gamma^\mu, \gamma^\nu \} = 2 \eta^{\mu\nu}$. An object that transforms according to the transformation law with this representation we call a Dirac spinor. The representation, and thus the generators, of the Poincar\'e group easily follows. \\
+
+\noindent The Hamiltonian, or generator of time translations, that follows from this spinor object solves the Dirac equation $(i\partial_\mu \gamma^\mu - m) \psi = 0$. Recall that we defined the conjugate-like object $\bar{\psi} = \psi^\dagger \gamma^0$ to induce Lorentz invariance for the Lagrangian density $\mathcal{L} = \bar{\psi} (-i\slashed{\partial} - m) \psi$, where the slash notation denotes $\slashed{A} = A_\mu \gamma^\mu$. \\
+
+\noindent Thus far, we've been thinking about $\psi = (\psi_1, \psi_2, \psi_3, \psi_4)$ as the classical spinor-valued Dirac field, but it is really the single-particle component that is needed to build the classical Dirac field with anticommuting objects, since we guess to employ the anticommutation relation of quantum Dirac field operators 
+
+\begin{equation}
+\{ \hat{\psi} (x), \hat{\psi}^\dagger (y) \} = \delta^{(4)} (x-y).
+\end{equation}
+
+\noindent So, to build a quantum theory, recall that we, in the case of creation and annihilation operators, for example,
+
+\begin{enumerate}
+\item Pick a classical single-particle theory
+\item Put hats on the field operators to quantize them
+\item Make an algebra for the quantized field operators to obey
+\item Find representations of that algebra.
+\end{enumerate}
+
+\noindent Alternatively, we can find some classical Dirac field that we quantize via the path integral, and use the path integral as a tool to guess the quantum theory. \\
+
+\noindent \textbf{Guess 1 (Wrong):} \\
+
+\noindent Let the classical field $\psi (x)$ consist of real numbers. Then the corresponding path integral $\int \mathcal{D} \psi \mathcal{D} \bar{\psi} \, e^{iS}$ will not yield the $n$-point correlation functions for the quantum Dirac (fermionic) field, but will yield the $n$-point correlation functions for the bosonic field. \\
+
+\noindent \textbf{Guess 2 (Correct):} \\
+
+\noindent Let the classical field $\psi (x)$ consist of Grassmann numbers, a Grassmann-valued field as the classical Dirac field. Then the path integral will yield the quantum Dirac field. \\
+
+\noindent A Grassmann-valued field (4-vectors) can be understood via sheaf theory and ringed spaces of Grassmann numbers on manifolds. \\
+
+\noindent An alternative way to make sense of a Grassman-valued field is by discretization to a lattice of spacing $\epsilon$, compactified to a torus. Consider a map from spacetime to the 4-dimensional torus
+
+\begin{equation}
+\mathbb{R}^{1,3} \rightarrow (\mathbb{Z} / N \mathbb{Z})^{\otimes 4}
+\end{equation}
+
+\noindent Consider the $(0+1)$-dimensional case, mapping continuous spacetime coordinates to discrete coordinates: $x_j \rightarrow \epsilon j$, where $j \in \mathbb{Z}/N\mathbb{Z}$, and discretize the Grassmann numbers to the lattice to define the classical Dirac field
+
+\begin{align}
+\psi_j &\equiv \psi (x_j) \equiv \psi (\epsilon j) \\
+\psi_j^\dagger &\equiv \psi^\dagger (x_j) \equiv  \psi^\dagger (\epsilon j).
+\end{align}
+
+\noindent So, the (discrete) classical Dirac field is a list of $8 \cdot N^4$ Grassmann numbers, since $N^4$ is the number of lattice sites and each of the two field ``operator'' contains 4 components. \\
+
+\noindent Note that if we work in momentum space, the Fourier coefficients will be made to be Grassmann numbers. \\
+
+\noindent The continuous classical Dirac field comes from the limit of the lattice spacing vanishing $\epsilon \rightarrow 0$, the number of sites tending to infinity $N \rightarrow \infty$, and the size of the torus tending to infinity $L = N \epsilon \rightarrow \infty$. \\
+
+\noindent Now, to build the quantum theory corresponding to these classical objects via the path integral formalism, we require an action, beginning with the discretization of the Lagrangian density $\mathcal{L} = \bar{\psi} ( i \slashed{\partial} - m ) \psi$. For the Dirac field, the discretized Lagrangian density is
+
+\begin{equation}
+\mathcal{L} (\psi_j, \bar{\psi}_j ) = \sum_{j \in ( \mathbb{Z}/N\mathbb{Z})^{\otimes 4}} i \bar{\psi}_j \left( \gamma^\mu \left( \frac{\psi_{j + \hat{\mu}} - \psi_j}{\epsilon} \right) \right) - m \bar{\psi}_j \psi_j.
+\end{equation}
+
+\noindent Where $\psi_j$ and $\bar{\psi}_j$ are $4D$ spinors of Grassmann numbers, we've employed the forward-difference to represent the partial derivative, and $\hat{\mu}$ is a unit vector in the $\mu^{th}$ direction. \\
+
+\noindent With the Lagrangian density, we can calculate the action $S = i \int^T_{-T} dt \, \mathcal{L}(\psi_j, \bar{\psi}_j )$ and the $n$-point correlation functions for the Grassmann-valued quantum field operators. \\
+
+\noindent For example, for the Grassmann variables, define the 2-point correlation function
+
+\begin{equation}
+\bra{0} \mathcal{T} [ \hat{\psi} (x), \hat{\bar{\psi}} (y) ] \ket{0} \equiv \lim_{T \rightarrow \infty (1-i \epsilon)} \frac{\int \mathcal{D} \bar{\psi} \mathcal{D} \psi \,\, \psi(x) \bar{\psi} (y) e^{iS}}{\int \mathcal{D} \bar{\psi} \mathcal{D} \psi \,\, e^{iS}}
+\end{equation}
+
+\noindent To calculate the 2-point correlation function, we continue to follow the prescription
+
+\begin{enumerate}
+\item Discretize the field and the action
+\item Evaluate the path integral
+\item Take the continuous limit
+\end{enumerate}
+
+\noindent Evaluate the path integral to find that the 2-point function is
+
+\begin{equation}
+\bra{0} \mathcal{T} [ \hat{\psi} (x), \hat{\bar{\psi}} (y) ] \ket{0} = S_F (x-y) = \int \frac{d^4 k}{(2 \pi)^4} \, \frac{i e^{-i k \cdot (x-y)}}{\slashed{k} - m +i \epsilon}
+\end{equation}
+
+\noindent Side note (topic of ongiong research): Fermion doubling is a topological artifact of incorrectly placing fermions on a lattice and taking the continuous limit. Extra fermions, called doublers, appear in the calculation, as the dispersion relation $\omega (k)$ becomes nonlinear and crosses the $k$-axis more than once. The expected dispersion relation is linear $\omega (k) = a k$, $a > 0$. In discretization, we must accept this effect and learn how to work around it. This is done for conveience, since without discretization, evaluating the 2-point function requires many more tricks.
+
+\subsection*{Generating Functional for the Dirac Field}
+
+\noindent Define the generating functional for the Dirac field in terms of two independent Grassmann-valued functions 
+
+\begin{equation}
+Z[J(x),\bar{J}(y)] \equiv \int \mathcal{D} \bar{\psi} \mathcal{D} \psi \,\, e^{i \int d^4 x \,\, ( \bar{\psi} (i \slashed{\partial} - m ) \psi + \bar{J} \psi + \bar{\psi} J )} .
+\end{equation}
+
+\noindent Where $J$ and $\bar{J}$ are Grassmann-valued (auxiliary) source fields that will be set to zero after differentiation. Calculating the generating functional will yield all $n$-point functions via functional derivatives, made possible by the employment of Grassmann numbers and functional quantization versus canonical quantization. By completing the square and simplifying the expression for the generating functional we get (\textbf{Exercise})
+
+\begin{equation}
+Z[J,\bar{J}] = Z_0 e^{-\int d^4 x d^4 y \,\, \bar{J} (x) S_F (x-y) J(y) }
+\end{equation}
+
+\noindent Where $Z_0 = Z [ J=0, \bar{J} = 0]$. Recall that for Grassmann numbers, the rules of differentiation include sign-switching and go like
+
+\begin{equation}
+\frac{d}{d\eta} \theta \eta = - \theta \frac{d}{d \eta} \eta = - \theta
+\end{equation}
+
+\noindent So the $n$-point correlation function is then
+
+\begin{equation}
+\bra{0} \mathcal{T} [ \psi^{(\alpha_1)} (x_1) \dots \psi^{(\alpha_n)} (x_n) ] \ket{0} = Z_0^{-1} \left( i (-1)^{\alpha_1 + 1} \frac{\delta}{\delta J^{\alpha_1}} \right) \dots \left( i (-1)^{\alpha_n + 1} \frac{\delta}{\delta J^{\alpha_n}} \right) Z[J,\bar{J}]
+\end{equation}
+
+\noindent Where $\psi^{(\alpha)} (x) = \psi (x)$ for $\alpha=0$ and $\psi^{(\alpha)} (x) = \bar{\psi} (x)$ for $\alpha=1$. \\
+
+\noindent Check (\textbf{Exercise}) that the quantum 2-point correlation function comes out to be the expected
+
+\begin{equation}
+\bra{0} \mathcal{T} [ \hat{\psi} (x) \hat{\bar{\psi}} (y) ] \ket{0} = S_F (x-y).
+\end{equation}
+
+\subsection*{Interactions of Fermions and Bosons}
+
+\noindent The path integral is a great tool for guessing Feynman rules as well, since we can expand in a Taylor series and recognize patterns that represent certain symmetries and diagrams. WIthout needing to introduce too much gauge theory, we introduce \textit{massive quantum electrodynamics (QED)}, a quantum field theory that models the interaction of fermions and (massive) bosons. We expect the photon (boson) mass to be zero, but consider it massive for now, and note that the upper bounds on the mass of the photon have been calculated to be nonzero (~$10^{-20}$). \\
+
+\noindent Consider the Lagrangian density
+
+\begin{equation}
+\mathcal{L} = \bar{\psi} ( i \gamma^\mu (\partial_\mu - i e A_\mu) - m_f ) \psi - \frac{1}{4} F^{\mu\nu}F_{\mu\nu} + \frac{1}{2} m_b^2 A_\mu A^\mu.
+\end{equation}
+
+\noindent There are six fields represented here: the fermion fields $\psi$ and $\bar{\psi}$, the 4 boson fields $A_\mu$, and the tensor $F^{\mu\nu} = \partial^\mu A^\nu - \partial^\nu A^\mu$. \\
+
+\noindent Following the path integral quantization, the classical 2-point correlation function is
+
+\begin{equation}
+\bra{0} \mathcal{T} [ \psi (x) \bar{\psi} (y) ] \ket{0} = \lim_{T \rightarrow \infty (1-i \epsilon)} \frac{\int \mathcal{D} \psi \mathcal{D} \bar{\psi} \mathcal{D} A \,\, \psi (x) \bar{\psi} (y) e^{iS}}{\int \mathcal{D} \psi \mathcal{D} \bar{\psi} \mathcal{D} A \,\, e^{iS}}.
+\end{equation}
+
+\noindent Write the action in terms of the free theory and the interacting theory
+
+\begin{align*}
+S &= S_0 + S_{int} \\
+S &= \left( \int d^4 x \, (\bar{\psi} ( i \slashed{\partial} - m_f ) \psi - \frac{1}{4} F^{\mu\nu} F_{\mu\nu} + \frac{1}{2} m_b^2 A_\mu A^\mu \right) \\ 
+&+ \left( -ie \int d^4 x \, \bar{\psi} A_\mu \gamma^\mu \psi  \right).
+\end{align*}
+
+\noindent Then the quantized 2-point correlation function for massive QED with the Taylor expansion is an infinite series of $n$-point correlation functions for the Grassmann-valued Gaussian path integrals
+
+\begin{equation}
+\bra{0} \mathcal{T} [ \hat{\psi} (x) \hat{\bar{\psi}} (y) ] \ket{0} = \lim_{T \rightarrow \infty (1-i \epsilon)} \frac{\int \mathcal{D} \psi \mathcal{D} \bar{\psi} \mathcal{D} A \,\, e^{i S_0} \psi (x) \bar{\psi} (y) ( 1 - i e \int d^4 x \, \bar{\psi} A_\mu \gamma^\mu \psi + \dots ) }{\int \mathcal{D} \psi \mathcal{D} \bar{\psi} \mathcal{D} A \,\, e^{i(S_0 + S_{int})}}.
+\end{equation}
+
+\noindent The Feynman rules for massive QED, which can be deduced via patterns from the Taylor series, are
+
+\begin{enumerate}
+\item Draw a straight line from $a$ to $b$ with momenta $p$ for each fermion and associate $\left( \frac{i}{\slashed{p} - m_f + i \epsilon} \right)_{ab}$
+\item Draw squiggly line from $\alpha$ to $\beta$ with momenta $q$ for each boson and associate $\left( \frac{-i}{k^2 - m_b^2 + i \epsilon} \right) \delta_{\alpha \beta}$
+\item To each vertex associate $i e \gamma^\mu$
+\item Enforce momentum conservation at vertices: $(2\pi)^4 \delta^{(4)} (\Sigma_{in} p - \Sigma_{out} q)$
+\item Integrate over undetermined momenta
+\item Amputate external lines
+\item Incoming fermions  $\eta^a (p)$ and outgoing fermions $\bar{\eta}^b (p)$
+\item $(-1)$ for each closed fermion loop.
+\end{enumerate}
+
+\noindent This prescription creates infinities, and we will visit renormalization to tame these infinities in the following lectures.

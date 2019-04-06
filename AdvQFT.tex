@@ -14,6 +14,7 @@
 \usepackage{simpler-wick}
 \usepackage{cancel}
 \usepackage{stackengine}
+\usepackage{slashed}
 
 \newcommand{\bigzero}{\mbox{\normalfont\Large\bfseries 0}}
 
@@ -73,32 +74,14 @@
 \section*{Lecture 7: Functional Quantization of the Dirac Field}
 \label{sec: lec7}
 
-\noindent We now employ Grassmann numbers/variables to build a path integral-like object that provides the $n$-point correlation functions for the Dirac (spinor) field. \\
+\input{chapters/lec7.tex}
 
-\noindent Consider the Grassmann integral of the complex Grassmann variables $\theta$ and $\theta^*$, the Grassmann Gaussian generating function
+\clearpage
 
-\begin{equation}
-Z[J] = \left( \prod_{j=1}^n \int d\theta^*_j d\theta_j \right) e^{- \sum_{j,k} \theta_j^* B_{jk} \theta_k + \sum_j (J_j^* \theta_j + \theta^*_j J_j) }
-\end{equation}
+\section*{Lecture 8: }
+\label{sec: lec8}
 
-\noindent Where the Grassmann variables and auxiliary fields $J$ and $J^*$ obey the anticommutation relations
-
-\begin{align}
-\{ \theta_j, \theta_k^* \} &= \{ \theta_j, \theta_k \} = \{\theta_j^*, \theta_k^* \} = 0 \\
-\{J_j, \theta_k \} &= \{J_j^*, \theta_k \} = \{ J_j, J_k^* \} = 0.
-\end{align}
-
-\noindent Calculating these Gaussian integrals, the generating functional becomes
-
-\begin{equation}
-Z[J] = e^{- \sum_{j,k} J_j^* [B^{-1}]_{jk} J_k}.
-\end{equation}
-
-\noindent Since the matrix $B$ is unitary, such that $B^\dagger = B$, the generating functional $Z[J]$ is Hermitian. \\
-
-\noindent Note that the generating functional takes a vector of Grassmann numbers, anticommuting objects, as input and yields an expression quadratic in the Grassmann numbers which evaluates to a real number, a commuting object, since observables correspond to Hermitian operators and real numbers as their eigenvalues; the expectation value must always be a real number, not a Grassmann number.
-
-%\input{chapters/lec7.tex}
+%\input{chapters/lec8.tex}
 
 %\clearpage
 
