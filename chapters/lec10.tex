@@ -40,13 +40,13 @@ g: \, \psi (x) \rightarrow \pi ( g (x) ) \psi(x) = e^{i \alpha (x)} \psi (x)
 \noindent The differential operator acting on the field $\partial_\mu \psi$ is a limit
 
 \begin{equation}
-\partial_\mu \psi \equiv \lim_{\epsilon \rightarrow \infty} \frac{ \psi(x + \epsilon e^\mu) - \psi(x)}{\epsilon}.
+\partial_\mu \psi \equiv \lim_{\epsilon \rightarrow \infty} \frac{ \psi(x + \epsilon n^\mu) - \psi(x)}{\epsilon}.
 \end{equation}
 
 \noindent And the local gauge group acting on this quantity results in oscillatory terms that do not converge as $\epsilon \rightarrow 0$ (e.g., $\sim e^{i\dots}$). The limit does exist under gauge transformations, since
 
 \begin{equation}
-g(\partial_\mu \psi) = \lim_{\epsilon \rightarrow \infty} \frac{1}{\epsilon} (e^{- \theta(x + \epsilon e^\mu)} \psi(x + \epsilon e^\mu ) - e^{i \theta(x)} \psi (x) ).
+g(\partial_\mu \psi) = \lim_{\epsilon \rightarrow \infty} \frac{1}{\epsilon} (e^{- \theta(x + \epsilon n^\mu)} \psi(x + \epsilon n^\mu ) - e^{i \theta(x)} \psi (x) ).
 \end{equation}
 
 \noindent This theory is boring at this moment, as the Lagrangian has only two gauge-invariant terms. To introduce dynamics and impose the desired symmetry, we need the derivative, but there is no way to do it with a single fermion (or boson) field. Therefore, we introduce an \textit{auxiliary field} which transforms nontrivially on the local gauge group (c.f., adding a catalyst in chemistry opens new thermodynamic paths for reactions to take place, as the catalyst is not consumed, but is used, in the reaction to lowers the free energy of the reaction). \\
@@ -74,20 +74,20 @@ g: \,\, U(y,x) \psi(x) &\rightarrow e^{i \theta(y)} U(y,x) e^{-i \theta(x) }e^{-
 
 \noindent Yes, they exist and are made rigorous in the formalism of fibre bundles and principal bundles. Note that $U(y,x)$ is a not a field and is nonlocal object, but it is expressable in terms of local objects and local data. \\
 
-\noindent So, $\psi(x + \epsilon e^\mu)$ and $U(x+\epsilon e^\mu, x)\psi(x)$ transform the same way under the local gauge group $\mathcal{G}$, and we can introduce dynamics to the theory and define the \textit{covariant derivative} as
+\noindent So, $\psi(x + \epsilon n^\mu)$ and $U(x+\epsilon n^\mu, x)\psi(x)$ transform the same way under the local gauge group $\mathcal{G}$, and we can introduce dynamics to the theory and define the \textit{covariant derivative} as
 
 \begin{equation}
-D_\mu \psi (x) \equiv \lim_{\epsilon \rightarrow 0} \frac{\psi (x + \epsilon e^\mu) - U (x + \epsilon e^\mu, x) \psi (x)}{\epsilon}
+D_\mu \psi (x) \equiv \lim_{\epsilon \rightarrow 0} \frac{\psi (x + \epsilon n^\mu) - U (x + \epsilon n^\mu, x) \psi (x)}{\epsilon}
 \end{equation}
 
 \noindent \textbf{What about the parallel transporter $U(y,x)$?} \\
 
-\noindent Suppose that $U(x + \epsilon e^\mu , x)$ is continuous and differentiable near $x$, and apply the Taylor series expansion
+\noindent Suppose that $U(x + \epsilon n^\mu , x)$ is continuous and differentiable near $x$, and apply the Taylor series expansion
 
 \begin{align}
-U(x + \epsilon e^\mu , x) &= U (x,x) + \epsilon e^\mu \partial_\mu U(x,x) + \dots \\
-&= 1 + \epsilon e^\mu \partial_\mu U(x,x) +\dots \\
-&= 1 - i \epsilon e^\mu A_\mu (x) + \dots
+U(x + \epsilon n^\mu , x) &= U (x,x) + \epsilon n^\mu \partial_\mu U(x,x) + \dots \\
+&= 1 + \epsilon n^\mu \partial_\mu U(x,x) +\dots \\
+&= 1 - i \epsilon n^\mu A_\mu (x) + \dots
 \end{align}
 
 \noindent Where we tried $U(x,x)=1$, since $1$ transforms correctly under the gauge group, and it is traditional to call $\partial_\mu U(x,x) = -i \alpha A_\mu (x)$, where $\alpha$ is the fine structure constant. Now, $A_\mu (x)$ is not arbitrary, and must satisfy some constraints. \\
@@ -97,7 +97,7 @@ U(x + \epsilon e^\mu , x) &= U (x,x) + \epsilon e^\mu \partial_\mu U(x,x) + \dot
 \noindent Apply a local gauge transformation $g \in \mathcal{G}$ to the last line above
 
 \begin{equation}
-e^{i \alpha (x + \epsilon e^\mu)} U(x + \epsilon e^\mu, x) e^{-i \theta(x)} = 1 - i \alpha \epsilon e^\mu A_\mu (x) + i e^\mu \partial_\mu \theta(x) + \dots
+e^{i \alpha (x + \epsilon n^\mu)} U(x + \epsilon n^\mu, x) e^{-i \theta(x)} = 1 - i \alpha \epsilon n^\mu A_\mu (x) + i n^\mu \partial_\mu \theta(x) + \dots
 \end{equation}
 
 \noindent Thus, the auxiliary field transforms under the local gauge as
@@ -135,7 +135,7 @@ g: \,\, D_\mu \psi (x) \rightarrow e^{i \alpha (x)} D_\mu \psi (x)
 \noindent To first order,
 
 \begin{equation}
-U(x+\epsilon e^\mu , x) \sim e^{-i\alpha \epsilon e^\mu A_\mu (x + \frac{1}{2} \epsilon e^\mu)}.
+U(x+\epsilon n^\mu , x) \sim e^{-i\alpha \epsilon n^\mu A_\mu (x + \frac{1}{2} \epsilon n^\mu)}.
 \end{equation}
 
 \noindent Use the parallel transporter to build a \textit{plaquette operator}, which transverses an object around a square of dimension $\epsilon$
