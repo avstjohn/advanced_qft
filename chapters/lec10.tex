@@ -27,13 +27,13 @@ U(1) = \{ e^{i \theta} : \, \theta \in [0, 2 \pi ) \}.
 g: \, \psi (x) \rightarrow \pi ( g (x) ) \psi(x) = e^{i \alpha (x)} \psi (x)
 \end{equation}
 
-\noindent Where $\theta(x) \in [ 0 , 2 \pi )$ is a phase factor. \\
+\noindent Where $\alpha(x) \in [ 0 , 2 \pi )$ is a phase factor. \\
 
 \noindent \textbf{Which theories are invariant under the Poincar\'e group and the local gauge group $\mathcal{G}$?} \\
 
 \noindent As it stands, we have an empty set of theories that are invariant under the local gauge group. Begin populating it by building a Lagrangian density, with a classical, continuous spacetime, and find which kinds of terms will be invariant. \\
 
-\noindent Terms of the Lagrangian density for the Dirac field that we already know to be invariant are $\bar{\psi}\psi$ and $(\bar{\psi} \gamma^/mu \psi)^2$ (contracted with itself). \\
+\noindent Terms of the Lagrangian density for the Dirac field that we already know to be invariant are $\bar{\psi}\psi$ and $(\bar{\psi} \gamma^\mu \psi)^2$ (contracted with itself). \\
 
 \noindent Note that the quantity $\bar{\psi} \slashed{\partial} \psi$ is not invariant, as it is not well-defined!  Why? \\
 
@@ -46,7 +46,7 @@ g: \, \psi (x) \rightarrow \pi ( g (x) ) \psi(x) = e^{i \alpha (x)} \psi (x)
 \noindent And the local gauge group acting on this quantity results in oscillatory terms that do not converge as $\epsilon \rightarrow 0$ (e.g., $\sim e^{i\dots}$). The limit does exist under gauge transformations, since
 
 \begin{equation}
-g(\partial_\mu \psi) = \lim_{\epsilon \rightarrow \infty} \frac{1}{\epsilon} (e^{- \theta(x + \epsilon n^\mu)} \psi(x + \epsilon n^\mu ) - e^{i \theta(x)} \psi (x) ).
+g(\partial_\mu \psi) = \lim_{\epsilon \rightarrow \infty} \frac{1}{\epsilon} (e^{- \alpha(x + \epsilon n^\mu)} \psi(x + \epsilon n^\mu ) - e^{i \alpha(x)} \psi (x) ).
 \end{equation}
 
 \noindent This theory is boring at this moment, as the Lagrangian has only two gauge-invariant terms. To introduce dynamics and impose the desired symmetry, we need the derivative, but there is no way to do it with a single fermion (or boson) field. Therefore, we introduce an \textit{auxiliary field} which transforms nontrivially on the local gauge group (c.f., adding a catalyst in chemistry opens new thermodynamic paths for reactions to take place, as the catalyst is not consumed, but is used, in the reaction to lowers the free energy of the reaction). \\
@@ -60,14 +60,14 @@ U_\gamma (y,x) \in U(1), \,\, \forall \, x, y \in \mathcal{M}_{1+3}
 \noindent To ensure that $U(y,x)$ is a gauge invariant comparator, and allow us to compare the two spacetime locations in a gauge invariant, we require that the local gauage group act as
 
 \begin{equation}
-g: \,\, U(y,x) \rightarrow e^{i \alpha (y)} U(y,x) e^{-i \theta(x)}.
+g: \,\, U(y,x) \rightarrow e^{i \alpha (y)} U(y,x) e^{-i \alpha(x)}.
 \end{equation}
 
 \noindent So, we define $\psi(x)$ to be \textit{parallel transported} to $y$ as
 
 \begin{align}
-g: \,\, U(y,x) \psi(x) &\rightarrow e^{i \theta(y)} U(y,x) e^{-i \theta(x) }e^{- \alpha (x)} \psi(x) \\
-&= e^{i \theta(y)} U(y,x)  \psi(x)
+g: \,\, U(y,x) \psi(x) &\rightarrow e^{i \alpha(y)} U(y,x) e^{-i \alpha(x) }\psi(x) \\
+&= e^{i \alpha(y)} U(y,x)  \psi(x)
 \end{align}
 
 \noindent \textbf{Does such an object $U(y,x)$ exist?} \\
@@ -97,13 +97,13 @@ U(x + \epsilon n^\mu , x) &= U (x,x) + \epsilon n^\mu \partial_\mu U(x,x) + \dot
 \noindent Apply a local gauge transformation $g \in \mathcal{G}$ to the last line above
 
 \begin{equation}
-e^{i \alpha (x + \epsilon n^\mu)} U(x + \epsilon n^\mu, x) e^{-i \theta(x)} = 1 - i \alpha \epsilon n^\mu A_\mu (x) + i n^\mu \partial_\mu \theta(x) + \dots
+e^{i \alpha (x + \epsilon n^\mu)} U(x + \epsilon n^\mu, x) e^{-i \alpha(x)} = 1 - i e \epsilon n^\mu A_\mu (x) + i n^\mu \partial_\mu \alpha(x) + \dots
 \end{equation}
 
 \noindent Thus, the auxiliary field transforms under the local gauge as
 
 \begin{equation}
-g: \,\, A_\mu (x) \rightarrow A_\mu (x) - \frac{1}{\alpha} \partial_\mu \theta (x)
+g: \,\, A_\mu (x) \rightarrow A_\mu (x) - \frac{1}{e} \partial_\mu \alpha (x)
 \end{equation}
 
 \noindent And this gives us a definition of $A_\mu (x)$ in one gauge, and this transformation law allows us to change gauge, or basis. Finding the form of $A_\mu (x)$ that satisfies this local gauge transformation is tantamount to having an infinitesimal method for building the parallel transporter object. \\
@@ -135,7 +135,7 @@ g: \,\, D_\mu \psi (x) \rightarrow e^{i \alpha (x)} D_\mu \psi (x)
 \noindent To first order,
 
 \begin{equation}
-U(x+\epsilon n^\mu , x) \sim e^{-i\alpha \epsilon n^\mu A_\mu (x + \frac{1}{2} \epsilon n^\mu)}.
+U(x+\epsilon n^\mu , x) \sim e^{-i e \epsilon n^\mu A_\mu (x + \frac{1}{2} \epsilon n^\mu)}.
 \end{equation}
 
 \noindent Use the parallel transporter to build a \textit{plaquette operator}, which transverses an object around a square of dimension $\epsilon$
@@ -158,7 +158,7 @@ U_\Box (x)  = e^{-i \epsilon \alpha (-A_2 (x + \frac{1}{2} \epsilon \hat{2}) - A
 \noindent Expand in $\epsilon$ (\textbf{Exercise})
 
 \begin{equation}
-U_\Box (x) = 1 - i \epsilon^2 \alpha (\partial_1 A_2 - \partial_2 A_1 ) + \mathcal{O} (\epsilon^3).
+U_\Box (x) = 1 - i \epsilon^2 e (\partial_1 A_2 - \partial_2 A_1 ) + \mathcal{O} (\epsilon^3).
 \end{equation}
 
 \noindent The choice of direction in this derivation is arbitrary, leaving 16 possible choices; construct the 2-tensor
@@ -192,17 +192,17 @@ g: \,\, [D_\mu, D_\nu] \psi (x) \rightarrow e^{i \alpha (x)} [D_\mu, D_\nu] \psi
 \noindent Plugging in the expression for the covariant derivative and working out the commutator, we get
 
 \begin{equation}
-[D_\mu, D_\nu] \psi (x) = [\partial_\mu, \partial_\nu] \psi + i \alpha ( [\partial_\mu, A_\nu] - [\partial_\nu, A_\mu]) \psi - \alpha^2 [A_\mu, A_\nu] \psi.
+[D_\mu, D_\nu] \psi (x) = [\partial_\mu, \partial_\nu] \psi + i  e ( [\partial_\mu, A_\nu] - [\partial_\nu, A_\mu]) \psi - e^2 [A_\mu, A_\nu] \psi.
 \end{equation}
 
 \noindent The commutators of $\partial$ and $A$ with themselves are zero. Therefore,
 
 \begin{equation}
-[D_\mu, D_\nu] \psi (x) = i \alpha ( \partial_\mu A_\nu - \partial_\nu A_\mu) \psi (x)
+[D_\mu, D_\nu] \psi (x) = i e ( \partial_\mu A_\nu - \partial_\nu A_\mu) \psi (x)
 \end{equation}
 
 \noindent The commutator of the covariant derivative is the \textit{spacetime curvature tensor}.
 
 \begin{equation}
-[D_\mu, D_\nu] \psi (x) =i \alpha F_{\mu\nu} (x).
+[D_\mu, D_\nu] \psi (x) =i e F_{\mu\nu} (x).
 \end{equation}
