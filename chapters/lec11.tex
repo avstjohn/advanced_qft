@@ -225,7 +225,7 @@ V(x) \partial_\mu V^\dagger (x) &= (\mathbb{I} + i \alpha^j \frac{\sigma^j}{2}) 
 \text{L.G.}: F_{\mu\nu}^{\,\,\,\,j} \frac{\sigma^j}{2} \rightarrow V(x) (F_{\mu\nu}^{\,\,\,\,j}) V^\dagger (x).
 \end{equation}
 
-\noindent By the similarity transformation, we can build an invariant Lorentz scalar with the trace of the invariant term (\textbf{Exercise, Check}, $\sigma^j \sigma^k$ introduces $\delta_{jk}$)
+\noindent By the similarity transformation, we can build an invariant Lorentz scalar with the trace of the invariant term (\textbf{Exercise}, and note that $\sigma^j \sigma^k$ contributes $\delta_{jk}$)
 
 \begin{equation}
 \text{Tr}\left( \left( F_{\mu\nu}^{\,\,\,\,j} \frac{\sigma^j}{2} \right)\left( F_{\mu\nu}^{\,\,\,\,k} \frac{\sigma^k}{2} \right) \right)= \frac{1}{8} (F_{\mu\nu}^{\,\,\,\,j})^2.
@@ -237,11 +237,19 @@ V(x) \partial_\mu V^\dagger (x) &= (\mathbb{I} + i \alpha^j \frac{\sigma^j}{2}) 
 \mathcal{L} = \bar{\Psi} (i \slashed{D} - m) \Psi - \frac{1}{4} (F_{\mu\nu}^{\,\,\,\,j})^2.
 \end{equation}
 
-\noindent This can be quantized in two ways:
+\noindent Note that in the abelian case (theory of QED), the dynamics in the Lagrangian density of the gauge field were quadratic. Considering only the gauge field term, with no matter (fermions), essentially results in the wave equation. 
+
+\begin{equation}
+F_{\mu\nu}^2 = (\partial_\mu A_\nu - \partial_nu A_\mu)^2
+\end{equation}
+
+\noindent In the nonabelian case, they are cubic and quartic, since there is the commutator of the gauge fields. \\
+
+\noindent The Lagrangian density can be quantized in two ways:
 
 \begin{enumerate}
 \item Perturbatively via path integrals
 \item Non-perturbatively via lattice discretization.
 \end{enumerate}
 
-\noindent Note that in the abelian case (theory of QED), the dynamics in the Lagrangian density of the gauge field were quadratic, essentially resulting in the wave equation. In the nonabelian case, they are quartic.
+
