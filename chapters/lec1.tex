@@ -4,24 +4,23 @@
 
 \begin{enumerate}
 \item Path integral quantization
-	\subitem Specifically, and luckily, we'll work with Gaussian integrals
+	\subitem Via Gaussian integrals.
 \item Review perturbation theory via path integrals
-	\subitem Includes familiar tools such as Wick's theorem, Feynman rules, et cetera
+	\subitem Includes familiar tools for calculating correlation functions such as Wick's theorem, Feynman rules, etc.
 \item Renormalization
-	\subitem Allows us to discuss effective QFT (e.g., eliminating infinities) in more detail
-\item (Non-)Abelian gauge theories (classical)
-	\subitem Full exploit of path integrals to deduce quantizations from classical field theories
+	\subitem Allows us to discuss effective QFT (e.g., eliminating infinities) in more detail.
+\item Abelian and nonabelian classical gauge theories
+	\subitem Uses path integrals to deduce quantizations from classical field theories.
 \item Quantization of non-abelian gauge theories
-	\subitem Using path integrals and lattices (non-perturbative calculations)
-\item Spontaneous symmetry breaking mechanisms (classical)
-	\subitem
+	\subitem Employs path integrals for perturbative calculations and lattices for nonperturbative calculations.
+\item Spontaneous symmetry breaking mechanisms
 \end{enumerate}
 
 \subsection*{Path Integrals}
 
-\noindent We begin by supposing that the quantization is already done, and we have a quantum system with a Hilbert space $\mathcal{H}$, a Hamiltonian $\hat{H}$, and a propagator, from integrating the Schroedinger equation, $U(t) = e^{-i\hat{H}t}$. \\
+\noindent Let's first suppose that the quantization is already done, and we have a quantum system with a Hilbert space $\mathcal{H}$, a Hamiltonian $\hat{H}$, and a propagator from integrating the Schroedinger equation, $U(t) = e^{-i\hat{H}t}$. \\
 
-\noindent Now work out a representation for the propagator by Taylor expanding
+\noindent Now work out a representation to first order for the propagator by Taylor expanding
 
 \begin{equation}
 U(t) = e^{-i\hat{H}t} = \left( e^{-\frac{it}{N}\hat{H}}  \right) ^N= \lim_{N \rightarrow \infty} \left( \mathbb{I} - \frac{it}{N}\hat{H} \right) ^N
@@ -33,7 +32,7 @@ U(t) = e^{-i\hat{H}t} = \left( e^{-\frac{it}{N}\hat{H}}  \right) ^N= \lim_{N \ri
 \bra{\phi_f} U(t) \ket{\phi_i} = \bra{\phi_f}  \left( e^{-\frac{it}{N}\hat{H}}  \right) ^N \ket{\phi_i}
 \end{equation}
 
-\noindent Now, insert the completeness relation of our HIlbert space in between each of the $N$ exponentials
+\noindent Insert  $N-1$ Hilbert space basis completeness relations, one in between each of the $N$ exponentials, and note that the sum over all paths from initial state to final state of functions of the paths
 
 \begin{align}
 \bra{\phi_f} U(t) \ket{\phi_i} &= \sum_{j_1,\dots,j_{N-1}} \bra{\phi_f} e^{-\frac{it}{N}\hat{H}} \ket{j_{N-1}}\bra{j_{N-1}} e^{-\frac{it}{N}\hat{H}} \dots \ket{j_1}\bra{j_1} e^{-\frac{it}{N}\hat{H}} \ket{\phi_i} \\
@@ -45,39 +44,39 @@ U(t) = e^{-i\hat{H}t} = \left( e^{-\frac{it}{N}\hat{H}}  \right) ^N= \lim_{N \ri
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=4in]{images/pathviz.png}
+	\caption*{}
 \end{figure}
 
-\noindent To work out the function of the path $f(j_1, \dots, j_{N-1})$, we need to calculate the transition amplitude in the path integral setting, and seek to write it as an exponential of some function of the states $\mathcal{L}(j,k)$, which ends up being the Lagrangian
+\noindent To work out the function of the path $f(j_1, \dots, j_{N-1})$, we need to calculate these individual transition amplitudes between successive states $\ket{j_{k-1}}$ to some final state $\bra{j_k}$ in the path integral setting, and seek to write it as an exponential of some function of the states $\mathcal{L}(j_{k-1}, j_k)$, the Lagrangian density
 
 \begin{equation}
-\bra{j} (\mathbb{I} - \frac{it}{N} \hat{H}) \ket{k} \simeq e^{\frac{it}{N} \mathcal{L}(j,k)}.
+\bra{j_k} (\mathbb{I} - \frac{it}{N} \hat{H}) \ket{j_{k-1}} \simeq e^{\frac{it}{N} \mathcal{L}(j_{k-1}, j_k)}.
 \end{equation}
 
-\noindent So, the transition amplitude will end up being a product of a bunch of exponentials with arguments dependent of the Lagrangian
+\noindent So, the full transition amplitude will be a product of exponentials pf Lagrangian densities, well-known classical quantities
 
-\begin{align}
-\bra{\phi_f} U(t) \ket{\phi_i} &= \sum_{\text{paths}} f(j_1, \dots , j_{N-1}) \\
-&= \sum_{j_1,\dots,j_{N-1}} e^{\frac{it}{N} \sum_{k=2}^{N-1} \mathcal{L} (j_k, j_{k-1}) } 
-\end{align}
+\begin{equation}
+\bra{\phi_f} U(t) \ket{\phi_i} = \sum_{\text{paths}} f(j_1, \dots , j_{N-1}) = \sum_{j_1,\dots,j_{N-1}} e^{\frac{it}{N} \sum_{k=2}^{N-1} \mathcal{L} (j_{k-1}, j_k) } .
+\end{equation}
 
 \noindent Before moving forward, what makes the path integral so interesting?
 
 \begin{enumerate}
-\item It allows the calculation of quantum quantities (e.g., transition amplitudes) via well-understood classical solutions, via the saddle point method (e.g., for handling highly oscillatory integrals).
-\item It can be used to build (nonperturbative) approximation schemes, such as Monte Carlo sampling over paths.
+\item It allows the calculation of quantum quantities, the transition amplitudes, via well-understood classical solutions and methods for handling highly oscillatory integrals such as the saddle point method.
+\item It can also be used to build nonperturbative approximation schemes, such as Monte Carlo sampling over paths.
 \end{enumerate}
 
 \subsection*{Example: General Nonrelativistic Quantum Mechanical System}
 
-\noindent Now we assume a little bit more about our quantum system. Suppose our quantum system is inspired by a classical system with pairs of canonical coordinates and momenta and the Hamiltonian $H(\{q^j\},\{p^j\}) = H(q,p)$. \\
+\noindent Let's assume a little bit more about our quantum system. Suppose the quantum system is inspired by a classical system with pairs of canonical coordinates and momenta and the Hamiltonian $H(\{q^j\},\{p^j\}) = H(q,p)$. \\
 
-\noindent Now, we turn around the path integral sum over paths to guess a quantum Hamiltonian and Hilbert space from this classical Hamiltonian via
+\noindent Turn around the path integral sum over paths to guess a quantum Hamiltonian and Hilbert space from this classical Hamiltonian via
 
 \begin{equation}
 U(q_i, q_f, T) = \bra{q_f} U(T) \ket{q_i} = \bra{q_f} e^{-iT\hat{H}} \ket{q_i}
 \end{equation}
 
-\noindent Proceed as before, mulitplying the exponentials and inserting $N-1$ completeness relations in between the $N$ copies of the exponential. In the continuous basis of canonical coordinates, the completeness relation is
+\noindent Proceed as before, mulitplying the exponentials and inserting $N-1$ completeness relations in between the $N$ copies of the exponential. The completeness relation for the canonical position basis, a continuous variable, is
 
 \begin{equation}
 \mathbb{I} = \left( \prod_j \int dq_k^j \right) \ket{q_k} \bra{q_k}
@@ -115,7 +114,7 @@ U(q_i, q_f, T) = \bra{q_f} U(T) \ket{q_i} = \bra{q_f} e^{-iT\hat{H}} \ket{q_i}
 e^{-i \epsilon \hat{H}} = \mathbb{I} - i \epsilon \hat{H} = \mathbb{I} - i \epsilon (g(\hat{q}) + h(\hat{p})).
 \end{equation}
 
-\noindent Using tihs linearity, we can write this dependence in the derived formula as
+\noindent Using this linearity, we can write this dependence in the derived formula as
 
 \begin{equation}
 \bra{q_{k+1}} e^{-i \epsilon \hat{H}(\hat{q}, \hat{p})} \ket{q_k} = \prod_j \int \frac{dp_k^j}{2\pi} \, e^{ -i \epsilon H (\frac{q_{k+1}+q_k}{2}, p_k)} e^{ i \sum_j p_k^j (q_{k+1}^j - q_k^j ) }
@@ -124,7 +123,7 @@ e^{-i \epsilon \hat{H}} = \mathbb{I} - i \epsilon \hat{H} = \mathbb{I} - i \epsi
 \noindent Putting all this together into the propagator, which is really the transition amplitude for a nonrelativistic quantum system,
 
 \begin{equation}
-U(q_I, q_f; T) = \left(  \prod_{jk} \int dq_k^j \int \frac{p_k^j}{2\pi} \right) e^{i \sum_k \left( \sum_j p_k^j (q_{k+1}^j - q_k^j) - \epsilon H (\frac{q_{k+1}}{2}, p_k) \right)}.
+U(q_i, q_f; T) = \left(  \prod_{jk} \int dq_k^j \int \frac{p_k^j}{2\pi} \right) e^{i \sum_k \left( \sum_j p_k^j (q_{k+1}^j - q_k^j) - \epsilon H (\frac{q_{k+1} + q_k}{2}, p_k) \right)}.
 \end{equation}
 
 \noindent Take note that there is nothing quantum on the RHS: no hats! We have used purely classical data to define the quantum propagator, or, transition amplitude, on the LHS, such that $U(q_i, q_f; T) \propto e^{- i \epsilon H (q_i, q_f; T)}$. \\
@@ -138,7 +137,7 @@ U(q_I, q_f; T) = \left(  \prod_{jk} \int dq_k^j \int \frac{p_k^j}{2\pi} \right) 
 \noindent Now, the expression for $U$ was not-so-pretty, but imagine continuous time variables and integrals when you see $\sum_k$ and $\epsilon$ above. In the limit as $N \rightarrow \infty$ (the number of completeness relations inserted), the quantum propagator is expressed in a continuous form with strange new "integrals".
 
 \begin{equation}
-U(q_i, q_f; t) = \left( \int \mathcal{D}q \int \mathcal{D} p \right) e^{i \int_0^T dt \, (\sum_j p^j \dot{q}^j - H(q,p))}
+U(q_i, q_f; T) = \left( \int \mathcal{D}q \int \mathcal{D} p \right) e^{i \int_0^T dt \, (\sum_j p^j \dot{q}^j - H(q,p))}
 \end{equation}
 
 \noindent Do not think of these as literal integrals, as we do not have a proper measure space to integrate over. Think of them as algorithms for now, something totally new that will be applied to solve this expression above.

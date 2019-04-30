@@ -8,7 +8,7 @@ I = \int_{-\infty}^\infty dx \,\, x^{2n} e^{\frac{1}{2} a x^2} = \frac{(2n-1)!!}
 \noindent We also derived the identity with the generating function for the multivariable Gaussian probability distribution
 
 \begin{equation}
-\int_{-\infty}^\infty dx_1 \dots \int_{-\infty}^\infty dx_n \,\, e^{-\frac{1}{2} x^T \textbf{A} x + J^T x} = \sqrt{\frac{\pi^n}{det(\textbf{A})}} e^{J^T \textbf{A}^{-1} J}.
+\int_{-\infty}^\infty dx_1 \dots \int_{-\infty}^\infty dx_n \,\, e^{-\frac{1}{2} x^T \textbf{A} x + J^T x} = \sqrt{\frac{\pi^n}{\text{det}(\textbf{A})}} e^{J^T \textbf{A}^{-1} J}.
 \end{equation}
 
 \noindent The 2-point correlation function for the $n$-variable Gaussian is (\textbf{Exercise}), for $j \ne k$
@@ -20,12 +20,12 @@ I = \int_{-\infty}^\infty dx \,\, x^{2n} e^{\frac{1}{2} a x^2} = \frac{(2n-1)!!}
 \noindent Note that this is also equal to the second derivative with respect to the vector $J$, evaluated at $J=0$
 
 \begin{equation}
-\langle x_j x_k \rangle \equiv \frac{\frac{\partial^2}{\partial J_j \partial J_k}\int_{-\infty}^\infty dx_1 \dots \int_{-\infty}^\infty dx_n \,\, e^{-\frac{1}{2} x^T \textbf{A} x + J^T x} }{\int_{-\infty}^\infty dx_1 \dots \int_{-\infty}^\infty dx_n \,\, e^{-\frac{1}{2} x^T \textbf{A} x + J^T x}} \Big|{J=0}.
+\langle x_j x_k \rangle \equiv \frac{\frac{\partial^2}{\partial J_j \partial J_k}\int_{-\infty}^\infty dx_1 \dots \int_{-\infty}^\infty dx_n \,\, e^{-\frac{1}{2} x^T \textbf{A} x + J^T x} }{\int_{-\infty}^\infty dx_1 \dots \int_{-\infty}^\infty dx_n \,\, e^{-\frac{1}{2} x^T \textbf{A} x + J^T x}} \Big|_{J=0}.
 \end{equation}
 
 \subsection*{Higher Order Moments: $l$-point Correlation Functions}
 
-\noindent The $l$-point correlationn function has similar form
+\noindent The $l$-point correlation function has similar form
 
 \begin{equation}
 \langle x_{j_1} \dots x_{j_l} \rangle \equiv \frac{\int_{-\infty}^\infty dx_{j_1} \dots \int_{-\infty}^\infty dx_{j_l} \,\, x_{j_1} \dots x_{j_l} \,\, e^{-\frac{1}{2} x^T \textbf{A} x}}{\int_{-\infty}^\infty dx_{j_1} \dots \int_{-\infty}^\infty dx_{j_l} \,\, e^{-\frac{1}{2} x^T \textbf{A} x}}.
@@ -125,7 +125,7 @@ U(q_a, q_b; T) = \frac{ \infty \, \text{const.}}{\sqrt{\text{det}(\textbf{A})}}
 \noindent Assuming that $\textbf{A}$ is invertible, there exists a unitary matrix $Q$, such that $Q^T Q = \mathbb{I}$ and $Q^T \textbf{A} Q = D$, with diagonal matrix $D$ with the eigenvalues of $\textbf{A}$ along the diagonal. Then the determinant of $\textbf{A}$ is easy to calculate, since 
 
 \begin{equation}
-\text{det}(\textbf{A}) = \prod_{j=1}^n \lambda_j (A).
+\text{det}(\textbf{A}) = \prod_{j=1}^n \lambda_j (\textbf{A}).
 \end{equation}
 
 \subsection*{Correlations Functions and Quantum Observables}
