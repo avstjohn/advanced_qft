@@ -70,7 +70,7 @@ dG^{(n)} = \frac{\partial G^{(n)}}{\partial K_c} \delta K_c + \frac{\partial G^{
 
 \noindent Where $e$ is the electric charge of the particle. \\
 
-\noindent (3) In Yang-Mills theory, a nonabelian gauge theory, there is more work to do in analyzing the divergences in the propagation of gauge bosons, as well as the propagation of fermions (quarks). The path integrals derived from applying the Yang-Mills theory Feynman rules produce divergences from the following terms in the Feynman expansion.
+\noindent (3) In Yang-Mills theory, a nonabelian gauge theory, there is more work to do in analyzing the divergences in the propagation of gauge bosons, as well as the propagation of fermions (quarks). The path integrals derived from applying the Yang-Mills theory Feynman rules produce divergences from the following terms in the Feynman expansion. See \textit{Peskin and Schroeder}, section 16.5 \textit{One-Loop Divergences of Non-Abelian Gauge Theory}, pages 521-544, for reference.
 
 \begin{figure}[H]
 	\centering
@@ -122,7 +122,7 @@ U(j, j+2\hat{e}^\mu) = U(j + \hat{e}^\mu, j+2\hat{e}^\mu)U(j, j+\hat{e}^\mu)
 
 \noindent These parallel transporters are $2 \times 2$ unitary matrices which populate the list of degrees of freedom, one for each link, or edge, in the classical lattice.\\
 
-\noindent Side: Wilson ran calcualtions on a $4\times4\times4\times4$ lattice, which requires $4^4 \times 3=768$ floating point numbers. With a gigabyte of RAM, one can store $\sim 2^{30}$ floating point numbers, corresponding to a $2^8 \times 2^8 \times 2^8 \times 2^8$ lattice. \\
+\noindent Side: Wilson ran calculations for the dynamics of a gauge field on a $4 \times 4 \times 4 \times 4$ lattice, which requires $4^4 \text{ lattice sites } \times 3 \text{ spatial coordinates per lattice site} = 768$ single-precision floating point numbers per unit time, requiring just 4 kilobytes of RAM. Note that a gigabyte ($\simeq 2^{30}$ bytes) of RAM is capable of storing $\sim 250,000,000$ single-precision floating point numbers, corresponding to almost $100 \times 100 \times 100 \times 100$ lattice. \\
 
 \noindent To quantize the nonabelian gauge theory, Wilson proposed a way to build an action that summed over the plaquettes of the lattice, called \textit{Wilson loops}. In terms of the parallel transporters, the action has the form
 
