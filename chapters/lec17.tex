@@ -104,7 +104,7 @@ $$\sim$$
  
  \subsection*{Nonabelian case}
  
- \noindent For the nonabelian case of SSB in $SU(2)$ gauge theory, consider a general, continuous gauge group $\mathcal{G}$ and a set of scalar fields $\underline{\phi} = (\phi_1, \phi_2, \dots)$ that transform under $\mathcal{G}$ as
+ \noindent For the nonabelian case of SSB in $SU(2)$ gauge theory, consider a general, continuous gauge group $\mathcal{G}$ and a set of scalar fields $\phi = \begin{pmatrix} \phi_1 \\ \vdots \\ \phi_d \end{pmatrix}$ that transform under the gauge group $\mathcal{G}$ as
  
  \begin{equation}
  \phi_j \rightarrow (\mathbb{I} + i \alpha^a t^a )_{jk} \phi_k
@@ -121,28 +121,28 @@ $$\sim$$
  \noindent Now build a gauge theory based on the gauge group $\mathcal{G}$ by promoting it to a local symmetry that acts locally on the scalar fields as
  
  \begin{equation}
- \underline{\phi} (x) \rightarrow \pi (g(x)) \underline{\phi} (x).
+ \phi (x) \rightarrow \pi (g(x)) \phi (x).
  \end{equation}
  
  \noindent Derivatives of the scalar fields in this gauge theory will be the covariant derivative
  
  \begin{equation}
- D_\mu \underline{\phi} = (\partial_\mu + g A_\mu^a T^a ) \underline{\phi}
+ D_\mu \phi = (\partial_\mu + g A_\mu^a \tau^a ) \phi
  \end{equation}
  
- \noindent Where the matrix $T^a = i t^a$. Build the kinetic energy terms by squaring and halving the covariant derivative acting on the field to obtain
+ \noindent Where the matrix $\tau^a = i t^a$. Build the kinetic energy terms by squaring and halving the covariant derivative acting on the field to obtain
  
  \begin{equation}
- \frac{1}{2} (\partial_\mu \phi_j )^2 + g A_\mu^a ( \partial_\mu \phi_j T_{jk}^a \phi_k ) + \frac{1}{2} g^2 A_\mu^a A^{b \mu} (T^a \phi)_j (T^b \phi)_j
+ \frac{1}{2} (\partial_\mu \phi_j )^2 + g A_\mu^a ( \partial_\mu \phi_j T_{jk}^a \phi_k ) + \frac{1}{2} g^2 A_\mu^a A^{b \mu} (\tau^a \phi)_j (\tau^b \phi)_j
  \end{equation}
 
 \noindent Now introduce the aspect of SSB to this gauge theory by combining this with the wine bottle potential
 
 \begin{equation}
-V(\underline{\phi}) = -\nu | \underline{\phi} |^2 + \lambda | \underline{\phi} |^4.
+V(\phi) = -\nu | \phi |^2 + \lambda | \phi |^4.
 \end{equation}
 
-\noindent So, there is a classical minima of these fields at $\underline{\phi}_0$, such that $\underline{\phi} (x) = \underline{\phi}_0 + \epsilon \underline{\phi}_1 (x)$, where $\underline{\phi}_1 (x)$ are small fluctuations about the minima, which we substitute and expand about in the Lagrangian density to find terms like (\textbf{Exercise})
+\noindent So, there is a classical minima of these fields at $\phi_0$, such that $\phi (x) = \phi_0 + \epsilon \phi_1 (x)$, where $\phi_1 (x)$ are small fluctuations about the minima, which we substitute and expand about in the Lagrangian density to find terms like (\textbf{Exercise})
 
 \begin{equation}
 \Delta \mathcal{L} \sim \frac{1}{2} (m^2)_{ab} A_\mu^a A^{b \mu}
@@ -151,27 +151,27 @@ V(\underline{\phi}) = -\nu | \underline{\phi} |^2 + \lambda | \underline{\phi} |
 \noindent Where we have a negative of a positive semidefinite matrix (if diagonable, then eigenvalues are $\ge 0$) with indices running from $a, \, b = 1, \dots, \text{dim}(\mathcal{G})$
 
 \begin{equation}
-(m^2)_{ab} \equiv g^2 (T^a \underline{\phi}_0 )_j (T^b \underline{\phi}_0)_j.
+(m^2)_{ab} \equiv g^2 (\tau^a \phi_0 )_j (\tau^b \phi_0)_j.
 \end{equation}
 
 \noindent For $\mathcal{G} = SU(2)$, choose the fundamental (spin-1) representation in terms of the Pauli spin matrices
 
 \begin{equation}
-T^1 = i \sigma^x, \,\,\,\,\,\,\,\, T^2 = i \sigma^y , \,\,\,\,\,\,\,\, T^3 = i \sigma^z.
+\tau^1 = i \sigma^x, \,\,\,\,\,\,\,\, \tau^2 = i \sigma^y , \,\,\,\,\,\,\,\, \tau^3 = i \sigma^z.
 \end{equation}
 
 \noindent Then the fields (eigenvectors) in this basis are
 
 \begin{equation}
-\underline{\phi} = \begin{pmatrix} \phi_1 \\ \phi_2 \end{pmatrix} \text{ and } \underline{\phi}_0 = \begin{pmatrix} 1 \\ 0 \end{pmatrix}.
+\phi = \begin{pmatrix} \phi_1 \\ \phi_2 \end{pmatrix} \text{ and } \phi_0 = \begin{pmatrix} 1 \\ 0 \end{pmatrix}.
 \end{equation}
 
-\noindent The action of the generators $T^a$ on the minima, the vacuum state, are (\textbf{Exercise})
+\noindent The action of the generators $\tau^a$ on the minima, the vacuum state, are (\textbf{Exercise})
 
 \begin{align}
-T^1 \underline{\phi}_0 &= i \begin{pmatrix} 0 \\ 1 \end{pmatrix} \\
-T^2 \underline{\phi}_0 &= - \begin{pmatrix} 0 \\ 1 \end{pmatrix} \\
-T^3 \underline{\phi}_0 &= i \begin{pmatrix} 1 \\ 0 \end{pmatrix} 
+\tau^1 \phi_0 &= i \begin{pmatrix} 0 \\ 1 \end{pmatrix} \\
+\tau^2 \phi_0 &= - \begin{pmatrix} 0 \\ 1 \end{pmatrix} \\
+\tau^3 \phi_0 &= i \begin{pmatrix} 1 \\ 0 \end{pmatrix} 
 \end{align}
 
 \noindent Giving matrix elements
@@ -185,10 +185,10 @@ T^3 \underline{\phi}_0 &= i \begin{pmatrix} 1 \\ 0 \end{pmatrix}
 \end{bmatrix}.
 \end{equation}
 
-\noindent If there is a generator $T^a$, in a different representation, that leaves the vacuum state invariant such that
+\noindent If there is a generator $\tau^a$, in a different representation, that leaves the vacuum state invariant such that
 
 \begin{equation}
-T^a \underline{\phi}_0 = 0
+\tau^a \phi_0 = 0
 \end{equation}
 
 \noindent Then there will be \textit{zero mass} terms (zero eigenvalues) in the matrix elements, indicating that initially massless bosons become massive when symmetry is broken! Specifically in the theory of electroweak interations, these particles are the $W^{\pm}$ and $Z$ bosons.
