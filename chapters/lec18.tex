@@ -186,5 +186,31 @@ A_\mu = \frac{1}{\sqrt{g^2 + g'^2}} (g' A_\mu^3 + g B_\mu ).
 
 \noindent Why is QFT so difficult to make rigorous? \\
 
-\noindent This is largely in part due to perturbation theory working so darn well, and it is used as the only \textit{standard} tool in QFT at large, but it is wrong, and we know why it is wrong. 
+\noindent This is largely in part due to perturbation theory working so darn well, and it is used as the only \textit{standard} tool in QFT at large, but it is wrong, and we know why it is wrong. For example, consider a Gaussian path integral in a $(0+1)$-dimensional QFT with a quartic interaction $Z = \int_{-\infty}^\infty dx \, e^{-x^2 - g x^4}$. As prescribed, we assume that $g$ is small, do perturbation theory, get lots of terms, and end up with a zero radius of convergence! The interaction term does improve convergence, but perturbation theory can't see that. Even after Wick rotation of the path integral $Z = \int \mathcal{D} \phi \, e^{-S}$, which also improves convergence, perturbation theory can't calculate a finitie value for the path integral. Also note that for spacetime dimensions $d>6$, all QFTs are trivial (e.g., Gaussians). \\
+
+\begin{itemize}
+\item Axiomatic QFT
+	\subitem Wightman: fields are distribution-valued objects (unbounded operators) acting on a Hilbert space.
+	\subitem Hang-Kastler: $C^*$-algebras.
+	\subitem Osterwalter-Schrader: statistical mechanical foundation (Wick-rotated).
+	\subitem Reconstruction theorems: With all $n$-point correlation functions well-behaved, we can reconstruct full Hilbert space and the unitary representations of the Poincar\'e symmetry group.
+	\subitem There are problems with local gauge theories (current research).
+\item Constructive QFT
+	\subitem Cluster expansions takes the Wick-rotated, Euclidean path integral and trade off the low energy perturbation series expansion for estimates of large values of the degrees of freedom that suppress bad parts of the series to get finite results.
+	\subitem Successful in $(1+1)$- and $(2+1)$-dimensional spacetime, as well as local gauge theory, but it is very intricate and has become very difficult to communicate and check results.
+\item Algebraic QFT
+	\subitem Start with some axioms and abstract what the observables should be from there.
+	\subitem Quantifies locality in the algebra, leading to observable ($C^*$) algebras.
+	\subitem There is difficulty in finding the states ($n$-point function) to match the $C^*$ algebras.
+\item Functional integration, expansions, and probabilistic approaches
+	\subitem Nelson's axioms are stronger than the Osterwalter-Schrader axioms.
+\item Vertex operator algebras
+	\subitem Very successful with conformal field theories (CFTs), but is stuck in $(1+1)$ dimensions.
+\item TQFT \& n-categories
+	\subitem Exactly solvable, strongly interacting theories built on n-categories.
+\item Chiral \& factorization algebras
+	\subitem See the work of Costello on perturbation expansions.
+\item Mathematical theory of effective QFT
+	\subitem Follows the work of Wilson.
+\end{itemize}
 
