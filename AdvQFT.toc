@@ -1,18 +1,18 @@
-\contentsline {section}{\numberline {1}Lecture 1: Introduction}{3}%
-\contentsline {section}{\numberline {2}Lecture 2: Gaussian Path Integrals}{8}%
-\contentsline {section}{\numberline {3}Lecture 3: Correlation Functions and Path Integrals}{13}%
-\contentsline {section}{\numberline {4}Lecture 4: Functional Quantization of the Scalar Field}{18}%
-\contentsline {section}{\numberline {5}Lecture 5: Functional Derivatives and Generating Functionals}{24}%
-\contentsline {section}{\numberline {6}Lecture 6: Grassmann Numbers}{29}%
-\contentsline {section}{\numberline {7}Lecture 7: Functional Quantization of the Dirac Field}{35}%
-\contentsline {section}{\numberline {8}Lecture 8: Renormalization}{41}%
-\contentsline {section}{\numberline {9}Lecture 9: Renormalizability (of $\phi ^4$ Theory)}{45}%
-\contentsline {section}{\numberline {10}Lecture 10: Abelian Gauge Theory (Quantum Electrodynamics)}{49}%
-\contentsline {section}{\numberline {11}Lecture 11: Nonabelian Gauge Theory (Yang-Mills)}{54}%
-\contentsline {section}{\numberline {12}Lecture 12: Quantization of Gauge Theories}{60}%
-\contentsline {section}{\numberline {13}Lecture 13: Quantization of Nonabelian Gauge Theory}{66}%
-\contentsline {section}{\numberline {14}Lecture 14: Quantization of Nonabelian Gauge Theory, Cont.}{71}%
-\contentsline {section}{\numberline {15}Lecture 15: Hamiltonian Lattice Gauge Theory}{77}%
-\contentsline {section}{\numberline {16}Lecture 16: Spontaneous Symmetry Breaking}{84}%
-\contentsline {section}{\numberline {17}Lecture 17: The Higgs Mechanism}{92}%
-\contentsline {section}{\numberline {18}Lecture 18: SSB with Gauge Theories and Next Steps}{97}%
+\contentsline {section}{\numberline {1}Lecture 1: Introduction}{3}{section.1}%
+\contentsline {section}{\numberline {2}Lecture 2: Gaussian Path Integrals}{8}{section.2}%
+\contentsline {section}{\numberline {3}Lecture 3: Correlation Functions and Path Integrals}{13}{section.3}%
+\contentsline {section}{\numberline {4}Lecture 4: Functional Quantization of the Scalar Field}{18}{section.4}%
+\contentsline {section}{\numberline {5}Lecture 5: Functional Derivatives and Generating Functionals}{24}{section.5}%
+\contentsline {section}{\numberline {6}Lecture 6: Grassmann Numbers}{29}{section.6}%
+\contentsline {section}{\numberline {7}Lecture 7: Functional Quantization of the Dirac Field}{35}{section.7}%
+\contentsline {section}{\numberline {8}Lecture 8: Renormalization}{41}{section.8}%
+\contentsline {section}{\numberline {9}Lecture 9: Renormalizability (of $\phi ^4$ Theory)}{45}{section.9}%
+\contentsline {section}{\numberline {10}Lecture 10: Abelian Gauge Theory (Quantum Electrodynamics)}{49}{section.10}%
+\contentsline {section}{\numberline {11}Lecture 11: Nonabelian Gauge Theory (Yang-Mills)}{54}{section.11}%
+\contentsline {section}{\numberline {12}Lecture 12: Quantization of Gauge Theories}{60}{section.12}%
+\contentsline {section}{\numberline {13}Lecture 13: Quantization of Nonabelian Gauge Theory}{66}{section.13}%
+\contentsline {section}{\numberline {14}Lecture 14: Quantization of Nonabelian Gauge Theory, Cont.}{71}{section.14}%
+\contentsline {section}{\numberline {15}Lecture 15: Hamiltonian Lattice Gauge Theory}{77}{section.15}%
+\contentsline {section}{\numberline {16}Lecture 16: Spontaneous Symmetry Breaking}{84}{section.16}%
+\contentsline {section}{\numberline {17}Lecture 17: The Higgs Mechanism}{92}{section.17}%
+\contentsline {section}{\numberline {18}Lecture 18: SSB with Gauge Theories and Next Steps}{97}{section.18}%
